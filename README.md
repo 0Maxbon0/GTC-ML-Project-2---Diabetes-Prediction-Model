@@ -1,60 +1,44 @@
-# Diabetes Dataset Analysis Project
+# Diabetes Prediction Model
 
 ## Project Overview
-This project explores the Diabetes dataset to uncover insights and relationships between various health metrics and diabetes outcomes. The analysis is conducted in Python using popular data science libraries.
+This project focuses on developing a machine learning model to predict diabetes using patient health data. The project is implemented in a Google Colab environment and explores various aspects of data analysis, visualization, and preliminary modeling.
 
-## Dataset Information
-- **Source**: `diabetes.csv`
-- **Number of entries**: 768
-- **Features**:
-  - Pregnancies
-  - Glucose
-  - BloodPressure
-  - SkinThickness
-  - Insulin
-  - BMI
-  - DiabetesPedigreeFunction
-  - Age
-  - Outcome (0: Non-Diabetic, 1: Diabetic)
-
-## Objectives
-1. Explore the distribution of diabetic vs. non-diabetic patients.
-2. Analyze the relationship between glucose levels and diabetes outcomes.
-3. Investigate the role of BMI in diabetes diagnosis.
+## Dataset
+The dataset used is `diabetes.csv`, which contains health metrics from 768 patients. Key features include:
+- Pregnancies
+- Glucose
+- BloodPressure
+- SkinThickness
+- Insulin
+- BMI
+- DiabetesPedigreeFunction
+- Age
+- Outcome (0: Non-Diabetic, 1: Diabetic)
 
 ## Key Findings
+### Data Exploration
+- The dataset contains 768 entries with no null values
+- Class distribution: 500 non-diabetic vs 268 diabetic patients
 
-### 1. Distribution of Diabetic vs. Non-Diabetic Patients
-- **Non-Diabetic (Outcome = 0)**: 500 patients
-- **Diabetic (Outcome = 1)**: 268 patients
+### Key Insights
+1. **Glucose Levels**: Diabetic patients show significantly higher average glucose levels (141.26) compared to non-diabetic patients (109.98)
+2. **BMI**: Diabetic patients have higher average BMI (35.14) compared to non-diabetic patients (30.30)
+3. **Visual Analysis**: Box plots show clear separations in glucose levels and BMI distributions between diabetic and non-diabetic groups
 
-A visual representation using a count plot shows the imbalance between the two classes.
+## Technologies Used
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
+- Google Colab
 
-### 2. Relationship Between Glucose Levels and Outcome
-- **Average glucose level for non-diabetic patients**: ~109.98 mg/dL
-- **Average glucose level for diabetic patients**: ~141.26 mg/dL
+## Getting Started
 
-A box plot illustrates that glucose levels are significantly higher in diabetic patients.
+### Prerequisites
+- Google account for accessing Colab
+- Basic understanding of Python and machine learning concepts
 
-### 3. Role of BMI in Diabetes
-- **Average BMI for non-diabetic patients**: ~30.30
-- **Average BMI for diabetic patients**: ~35.14
-
-A box plot confirms that BMI tends to be higher in diabetic patients.
-
-## Tools and Libraries Used
-- `pandas`: Data manipulation and analysis
-- `seaborn`: Data visualization
-- `matplotlib`: Plotting graphs
-- google colab Notebook: Interactive environment for code execution
-
-## How to Run the Project
-1. Clone or download the project files.
-2. Ensure you have Python installed along with the required libraries.
-3. Open `Project_2.ipynb` in Jupyter\colab Notebook.
-4. Run the cells sequentially to reproduce the analysis.
-
-## Future Work
-- Perform more advanced statistical tests.
-- Build a predictive model to classify diabetes outcomes.
-- Explore other features and their correlations.
+### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/0Maxbon0/GTC-ML-Project-2---Diabetes-Prediction-Model.git
