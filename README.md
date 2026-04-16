@@ -40,8 +40,11 @@ After feature construction:
 zero_features = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
 df[zero_features] = df[zero_features].replace(0, np.nan)
 for feature in zero_features:
+    med_all = df[feature].median()
     med_pos = df[df['Outcome'] == 1][feature].median()
     med_neg = df[df['Outcome'] == 0][feature].median()
+    med_pos = med_all if pd.isna(med_pos) else med_pos
+    med_neg = med_all if pd.isna(med_neg) else med_neg
     df.loc[df[feature].isna() & (df['Outcome'] == 1), feature] = med_pos
     df.loc[df[feature].isna() & (df['Outcome'] == 0), feature] = med_neg
 safe_bmi = df['BMI'].clip(lower=np.finfo(float).eps)
