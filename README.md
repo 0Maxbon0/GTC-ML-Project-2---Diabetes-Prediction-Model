@@ -49,8 +49,9 @@ for feature in zero_features:
     df.loc[df[feature].isna() & (df['Outcome'] == 0), feature] = med_neg
 safe_bmi = df['BMI'].clip(lower=np.finfo(float).eps)
 safe_glucose = df['Glucose'].clip(lower=np.finfo(float).eps)
-df['Glucose_BMI_Ratio'] = df['Glucose'] / safe_bmi
-df['Insulin_Glucose_Ratio'] = df['Insulin'] / safe_glucose
+safe_insulin = df['Insulin'].clip(lower=np.finfo(float).eps)
+df['Glucose_BMI_Ratio'] = safe_glucose / safe_bmi
+df['Insulin_Glucose_Ratio'] = safe_insulin / safe_glucose
 ```
 
 Why this matters: feature scale heterogeneity and invalid zeros can dominate optimization dynamics and obscure clinically meaningful signal if left untreated.
