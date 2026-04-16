@@ -47,9 +47,9 @@ for feature in zero_features:
     med_neg = med_all if pd.isna(med_neg) else med_neg
     df.loc[df[feature].isna() & (df['Outcome'] == 1), feature] = med_pos
     df.loc[df[feature].isna() & (df['Outcome'] == 0), feature] = med_neg
-safe_bmi = df['BMI'].clip(lower=np.finfo(float).eps)
-safe_glucose = df['Glucose'].clip(lower=np.finfo(float).eps)
-safe_insulin = df['Insulin'].clip(lower=np.finfo(float).eps)
+safe_bmi = df['BMI'].clip(lower=1.0)
+safe_glucose = df['Glucose'].clip(lower=1.0)
+safe_insulin = df['Insulin'].clip(lower=1.0)
 df['Glucose_BMI_Ratio'] = safe_glucose / safe_bmi
 df['Insulin_Glucose_Ratio'] = safe_insulin / safe_glucose
 ```
