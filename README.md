@@ -130,6 +130,6 @@ This repo currently keeps training and inference in `Project_2.ipynb`. To run in
 
 ## Engineering Notes
 
-- The final notebook inference cell trains `RandomForestClassifier` directly on unscaled `X_train`; earlier model comparison uses scaled data. For production, lock one preprocessing contract and reuse it for both training and inference.
+- The final notebook inference cell trains `RandomForestClassifier` on unscaled training features (`X_train` from the split), while earlier model comparison uses standardized features (`X_train_scaled`). For production, lock one preprocessing contract and reuse it for both training and inference.
 - Class-conditional imputation currently uses `Outcome` labels. That is acceptable for offline analysis but should be converted to train-only transformers for deployment to avoid leakage patterns in future pipelines.
 - This model is an educational/engineering artifact, not a clinical decision system.
