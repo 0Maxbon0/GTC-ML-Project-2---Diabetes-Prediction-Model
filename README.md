@@ -118,8 +118,5 @@ Contributions are welcome:
 2. Make focused, documented changes.
 3. Open a pull request with rationale and testing notes.
 
-## License
-Add a project license (e.g., MIT or Apache-2.0) and reference it here.
-
 ## Contact
 For questions or collaboration, open an issue in this repository.
